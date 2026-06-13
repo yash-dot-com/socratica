@@ -11,7 +11,10 @@ dotenv.config({
 const vars = z.object({
   PORT: z.string().default("3000"),
   DATABASE_URL: z.url(),
-  NODE_ENV: z.enum(["development","production","test"]).default("development")
+  NODE_ENV: z.enum(["development","production","test"]).default("development"),
+  SARVAM_API: z.string(),
+  GROQ_API: z.string(),
+  JWT_SECRET: z.string().min(5).max(256),
 })
 
 // parsing the process.env object to check if its in the exact same format and types
