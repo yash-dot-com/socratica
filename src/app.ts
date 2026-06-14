@@ -9,6 +9,7 @@ import { errorResponse, HTTPStatus, successResponse } from "./utils/responses.js
 import { requestLogger } from "./middlewares/requestLogger.js";
 import { rateLimiter } from "./middlewares/rateLimiter.js";
 import authRouter from "./routes/auth.routes.js"
+import sessionRouter from "./routes/session.routes.js"
 import cookieParser from "cookie-parser";
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(rateLimiter(50))
 
 // mount routers here 
 app.use("/auth", authRouter) 
+app.use("/api", sessionRouter)
 
 // using validator 
 // all the routes that can produce error needs to have next() function as well to be able to call the errorHandler middleware
