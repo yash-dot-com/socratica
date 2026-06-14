@@ -23,5 +23,5 @@
     "lib": ["es2022"],
     "types": ["node"],
   },
-  "exclude": ["node_modules", "dist", "drizzle.config.ts"],
+  "exclude": ["node_modules", "dist", "drizzle.config.ts", "frontend"],
 }
