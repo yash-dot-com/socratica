@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { env } from "../env.js";
 import { errorResponse, HTTPStatus } from "./responses.js";
 
-export const isAuthenticated = (req: Request<{currentUser: any}>, res: Response, next: NextFunction) => {
+export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
     const {token} = req.cookies
     if(!token){
         return errorResponse(res,HTTPStatus.UNAUTHORIZED,"Unauthorized user, signin again")
